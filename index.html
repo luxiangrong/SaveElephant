@@ -10,6 +10,8 @@
 		<script language="javascript" type="text/javascript" src="script/js.js"></script>
 		<script language="javascript" type="text/javascript" src="script/fun.js"></script>
 		<script language="javascript" type="text/javascript" src="script/jquery_scroll.js"></script>
+		<script language="javascript" type="text/javascript" src="script/jquery.scrollTo.js"></script>
+		<script language="javascript" type="text/javascript" src="script/function.js"></script>
 		<!--[if lte IE 6]>
 		<script src="script/png.js" type="text/javascript"></script>
 		<script type="text/javascript">
@@ -47,21 +49,21 @@
 				</div>
 			</div>
 		</div>
-		<div class="nav">
-			<a href="index.html" class="aNow">首页</a>
-			<a href="Crisis.html">了解危机</a>
-			<a href="action.html">采取行动</a>
-			<a href="ShareInfo.html">分享信息</a>
-			<a href="down.html">资料下载</a>
-			<a href="Partner.html">合作伙伴</a>
+		<div class="nav" id="nav">
+			<a href="index.html" class="aNow" data-target="#videoIntro">首页</a>
+			<a href="Crisis.html" data-target="#crisis">了解危机</a>
+			<a href="action.html" data-target="#action">采取行动</a>
+			<a href="ShareInfo.html" data-target="#shareInfo">分享信息</a>
+			<a href="down.html" data-target="#download">资料下载</a>
+			<a href="Partner.html" data-target="#partner">合作伙伴</a>
 		</div>
 
-		<div class="indexPart1 view" style="background-image:url(image/limg1260_1.jpg)" data-stellar-background-ratio="0.5">
+		<div id="videoIntro" class="indexPart1 indexDiv" style="background:url(image/limg1260_1.jpg) center top no-repeat fixed; background-size:100%;" data-stellar-background-ratio="0.3">
 			<div class="imgDiv"><img src="image/limg540.jpg" alt="" />
 			</div>
 		</div>
 
-		<div class="indexPart4 view" style="background:#40280d url(image/limg1260_4.jpg) center top no-repeat;">
+		<div id="crisis" class="indexPart4 indexDiv" style="background:#40280d url(image/bg1.jpg) center top no-repeat fixed; background-size:100%;" data-stellar-background-ratio="0.3">
 			<div class="indexPartDiv">
 				<div class="indexPart">
 					<h1>了解危机</h1>
@@ -107,48 +109,48 @@
 					</li>
 				</ul>
 			</div>
-			<div class="wal">
+			<div class="wal" style="background:url(image/map.png) -24px 0px no-repeat ;  height: 100%;">
 				<div class="map">
 					<ul>
-						<li style="left:327px; top:202px;"></li>
-						<li style="left:365px; top:253px;"></li>
-						<li style="left:325px; top:273px;"></li>
-						<li style="left:359px; top:313px;"></li>
-						<li style="left:435px; top:313px;"></li>
-						<li style="left:275px; top:329px;"></li>
+						<li style="left:327px; top:426px;"></li>
+						<li style="left:365px; top:477px;"></li>
+						<li style="left:325px; top:497px;"></li>
+						<li style="left:359px; top:537px;"></li>
+						<li style="left:435px; top:537px;"></li>
+						<li style="left:275px; top:553px;"></li>
 					</ul>
 				</div>
 				<div class="map map1">
 					<ul>
-						<li style="left:944px; top:174px;"></li>
-						<li style="left:845px; top:228px;"></li>
-						<li style="left:910px; top:228px;"></li>
-						<li style="left:825px; top:274px;"></li>
-						<li style="left:860px; top:289px;"></li>
-						<li style="left:826px; top:329px;"></li>
+						<li style="left:944px; top:398px;"></li>
+						<li style="left:845px; top:452px;"></li>
+						<li style="left:910px; top:452px;"></li>
+						<li style="left:825px; top:498px;"></li>
+						<li style="left:860px; top:513px;"></li>
+						<li style="left:826px; top:553px;"></li>
 					</ul>
 				</div>
 				<div class="list1">
 					<ul>
-						<li style="left:850px; top:155px;">
+						<li style="left:850px; top:379px;">
 							中国
 						</li>
-						<li style="left:523px; top:189px;">
+						<li style="left:523px; top:413px;">
 							中东
 						</li>
-						<li style="left:798px; top:303px;">
+						<li style="left:798px; top:527px;">
 							东南亚
 						</li>
-						<li style="left:279px; top:304px;">
+						<li style="left:279px; top:528px;">
 							尼日利亚
 						</li>
-						<li style="left:310px; top:322px;">
+						<li style="left:310px; top:546px;">
 							喀麦隆
 						</li>
-						<li style="left:467px; top:354px;">
+						<li style="left:467px; top:578px;">
 							非洲东部
 						</li>
-						<li style="left:382px; top:479px;">
+						<li style="left:382px; top:703px;">
 							非洲南部
 						</li>
 					</ul>
@@ -230,7 +232,7 @@
 			</ul>
 		</div>
 
-		<div class="indexPart2 view" style="background-image:url(image/limg1260_3.jpg)" data-stellar-background-ratio="0.5">
+		<div id="action" class="indexPart2 indexDiv" style="background:url(image/limg1260_3.jpg) center top no-repeat fixed; background-size:100%;" data-stellar-background-ratio="0.3">
 			<div class="indexPart">
 				<h1>采取行动</h1>
 				<div class="content">
@@ -238,7 +240,6 @@
 				</div>
 				<a href="" class="btn"></a>
 			</div>
-			<a href="javascript:;" class="btn1"><img src="image/lbtn5.png" alt="" /></a>
 			<div class="contentDiv">
 				<a href="javascript:;" class="close"></a>
 				<div class="imgDiv"><img src="image/limg579.jpg" alt="" />
@@ -253,8 +254,9 @@
 				</div>
 			</div>
 		</div>
+		<a href="javascript:;" class="indexPart2Btn"><img src="image/lbtn5.png" alt="" /></a>
 
-		<div class="indexPart3 view" style="background-image:url(image/limg1260_2.jpg) " data-stellar-background-ratio="0.5">
+		<div id="shareInfo" class="indexPart3 indexDiv" style="background:url(image/limg1260_2.jpg) center top no-repeat fixed; background-size:100%;" data-stellar-background-ratio="0.3">
 			<div class="indexPart">
 				<h1>分享信息</h1>
 				<div class="content">
@@ -266,7 +268,7 @@
 			</div>
 		</div>
 
-		<div class="indexPart5 view" style="background-image:url(image/limg1260_5.jpg) " data-stellar-background-ratio="0.5">
+		<div id="download" class="indexPart5 indexDiv" style="background:url(image/limg1260_5.jpg) center top no-repeat fixed; background-size:100%;" data-stellar-background-ratio="0.3">
 			<div class="indexPart">
 				<h1>资料下载</h1>
 				<div class="content">
@@ -278,7 +280,7 @@
 			</div>
 		</div>
 
-		<div class="indexPart6 view" style="background-image:url(image/limg1260_6.jpg)" data-stellar-background-ratio="0.5">
+		<div id="partner" class="indexPart6 indexDiv" style="background:url(image/limg1260_6.jpg) center top no-repeat fixed; background-size:100%;" data-stellar-background-ratio="0.3">
 			<div class="indexPart">
 				<h1>合作伙伴</h1>
 				<div class="content">
@@ -425,7 +427,5 @@
 				</div>
 			</div>
 		</div>
-		<script src="script/jquery.stellar.js"></script>
-		<script src="script/function.js"></script>
 	</body>
 </html>

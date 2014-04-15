@@ -23,7 +23,7 @@
 .ActionPart2{width:960px; margin:0 auto;}
 
 .pageImg{min-height:100px; _height:100px; position:relative;}
-.pageImg .content{position:absolute; z-index:1; left:0px; top:109px; width:495px; height:89px; padding:30px; overflow:hidden; background:url(../image/bg.png); font-size:16px; line-height:1.6em; color:#FFF;}
+.pageImg .content{position:absolute; z-index:1; left:0px; top:109px; width:495px; padding:30px; overflow:hidden; background:url(../image/bg.png); font-size:16px; line-height:1.6em; color:#FFF;}
 .ShareA{display:block; background:url(../image/Share.gif) left top no-repeat; width:36px; height:36px; overflow:hidden; position:absolute; z-index:1; right:0px; bottom:0px;}
 .ShareA:hover{background:url(../image/ShareHover.gif) left top no-repeat; width:100px;}
 .pageTitle{height:40px; line-height:40px; overflow:hidden; padding-left:7px; background:url(../image/line1.gif) bottom repeat-x; color:#982821;}
@@ -151,7 +151,7 @@
 .indexPart4 .list div{width:27px; text-align:center; overflow:hidden; position:absolute; left:16px; top:0px;}
 .indexPart4 .wal{height:600px; width:1260px; position:relative;}
 .indexPart4 .indexPartDiv{position:absolute; z-index:1; left:0px; top:0px; width:100%;}
-.indexPart4 .indexPart{top:50px;}
+.indexPart4 .indexPart{top:100px;}
 /**/
 .indexPart4 .map li{position:absolute; z-index:10; background:url(../image/limg30_2.png) left top no-repeat; width:30px; height:23px; overflow:hidden;}
 .indexPart4 .map .liNow{background:url(../image/limg30_1.png) left top no-repeat;}
@@ -165,7 +165,7 @@
 .indexPart4 .list1{color:#fff; font-size:14px; font-weight:bold; position:relative;}
 .indexPart4 .list1 li{position:absolute; z-index:1;}
 /**/
-.indexPart4 .list2{background:url(../image/bg1.png) left top no-repeat; width:651px; height:340px; position:absolute; z-index:1; left:327px; top:173px;}
+.indexPart4 .list2{background:url(../image/bg1.png) left top no-repeat; width:651px; height:340px; position:absolute; z-index:1; left:327px; top:397px;}
 .indexPart4 .list2 a{display:block; position:absolute; z-index:5;}
 .indexPart4 .list2 .li_01 a{width:176px; height:100px; overflow:hidden; left:0px; top:23px;}
 .indexPart4 .list2 .li_02 a{width:48px; height:123px; overflow:hidden; left:172px; top:56px;}
@@ -188,7 +188,7 @@
 .indexPart4 .list3 .more{text-align:center;}
 
 .indexPart2{height:600px; overflow:hidden; position:relative;}
-.indexPart2 .btn1{position:absolute; z-index:1; bottom:33px; right:25px;}
+.indexPart2Btn{position:fixed; z-index:19; bottom:33px; right:25px;}
 .indexPart2 .contentDiv{width:580px; height:440px; padding:60px 20px 0 20px; overflow:hidden; background:#fff; position:absolute; top:50px; right:0px; z-index:10; display:none;}
 .indexPart2 .close{position:absolute; top:6px; right:5px; display:block; background:url(../image/lico5.gif) left top no-repeat; width:18px; height:18px; overflow:hidden;}
 .indexPart2 .name{text-align:center; color:#333; padding:10px 0 20px 0;}
@@ -207,14 +207,22 @@
 .indexPart6 .name{height:40px; line-height:40px; overflow:hidden; background:#ccc; font-size:16px;}
 .indexPart6 .leftBtn{position:absolute; left:0px; top:83px; z-index:10; width:33px; height:66px; background:url(../image/leftBtn.png) left top no-repeat; display:block;}
 .indexPart6 .rightBtn{position:absolute; right:0px; top:83px; z-index:10; width:33px; height:66px; background:url(../image/rightBtn.png) left top no-repeat; display:block;}
-.indexPart6 .btn{display:block; background:url(../image/lico4.gif) left top no-repeat; width:39px; height:39px; overflow:hidden; position:absolute; z-index:10; right:56px; bottom:0px;}
-.indexPart6 .btn:hover{background:url(../image/lbtn4.gif) left top no-repeat; width:154px;}
+.indexPart6 .btn{display:block; background:url(../image/lbtn4.gif) right top no-repeat; width:39px; height:39px; overflow:hidden; position:absolute; z-index:10; right:56px; bottom:0px; 
+transition: width 0.5s;
+-moz-transition: width 0.5s;
+-webkit-transition: width 0.5s;
+}
+.indexPart6 .btn:hover{background:url(../image/lbtn4.gif) right top no-repeat; width:154px;}
 
 .indexPart{width:495px; padding-left:205px; min-height:120px; _height:120px; position:relative; top:152px; margin:0 auto; color:#FFF;}
 .indexPart h1{position:absolute; left:0px; top:0px; font-size:40px;}
 .indexPart .content{line-height:1.6em; font-size:15px; border-left:#fff solid 1px; padding:0 0 0 15px; position:relative; left:-15px; top:5px; margin-bottom:35px;}
-.indexPart .btn{display:block; background:url(../image/lico4.gif) left top no-repeat; width:39px; height:39px; overflow:hidden;}
-.indexPart .btn:hover{background:url(../image/lbtn4.gif) left top no-repeat; width:154px;}
+.indexPart .btn{display:block; background:url(../image/lbtn4.gif) right top no-repeat; width:39px; height:39px; overflow:hidden; 
+transition: width 0.5s;
+-moz-transition: width 0.5s;	/* Firefox 4 */
+-webkit-transition: width 0.5s;	/* Safari 和 Chrome */
+-o-transition: width 0.5s;	/* Opera */}
+.indexPart .btn:hover{background:url(../image/lbtn4.gif) right top no-repeat; width:154px;}
 
 .contact{width:880px; overflow:hidden; margin:0 auto; padding:25px 0; color:#333;}
 .contact .msg{padding:28px 0; background:url(../image/line1.gif) bottom repeat-x; line-height:1.6em; margin-bottom:22px;}
@@ -226,9 +234,14 @@
 .contact .btn1{float:left; cursor:pointer; background:url(../image/btn2.gif); width:101px; height:26px; border:0px; position:relative; top:2px;}
 .contact .btn2{background:url(../image/btn3.gif); width:120px; height:26px; border:0px; cursor:pointer;}
 
-.view{
-	background: url(../image/a.jpg) no-repeat center top fixed;
-	background-size: 100% ;
-}
+.commentList{border-top:#bbb dotted 1px; width:868px; margin:0 auto; padding:35px 0;}
+.commentList .content{line-height:1.6em; color:#666; border:#bbb solid 1px; padding:5px 10px; min-height:20px; _height:20px; position:relative; margin-bottom:10px;}
+.commentList .time{position:absolute; right:10px; bottom:5px;}
+.commentList .btn{padding:5px 0 0 0; height:35px; overflow:hidden; border-top:#bbb dotted 1px;}
+.commentList .btn a{display:block; width:74px; height:20px; line-height:20px; text-align:center; overflow:hidden; background:#a70d14; color:#FFF; margin-left:auto;}
+
+.search{width:885px; overflow:hidden; margin:0 auto; padding-bottom:85px;}
+.search h2{border-bottom:#bbb dotted 1px; height:45px; line-height:45px; overflow:hidden; margin-bottom:15px;}
+.search li{height:42px; line-height:42px; overflow:hidden; border-bottom:#bbb dotted 1px;}
 
 
