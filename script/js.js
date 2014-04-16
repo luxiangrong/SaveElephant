@@ -83,7 +83,7 @@ $(function() {
 		$(this).hover(function() {
 			$('#nav').find('a').removeClass('aNow');
 			$(this).addClass('aNow');
-			$.scrollTo($(this).attr('data-target'), 800);
+			$.scrollTo($(this).attr('data-target'), 800,  {queue:false});
 		}, function() {
 		})
 	})
