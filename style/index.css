@@ -165,7 +165,7 @@
 .indexPart4 .list1{color:#fff; font-size:14px; font-weight:bold; position:relative;}
 .indexPart4 .list1 li{position:absolute; z-index:1;}
 /**/
-.indexPart4 .list2{background:url(../image/bg1.png) left top no-repeat; width:651px; height:340px; position:absolute; z-index:1; left:327px; top:397px;}
+.indexPart4 .list2{background:url(../image/bg1.png) left top no-repeat; width:651px; height:340px; position:absolute; z-index:1; left:327px; top:297px;}
 .indexPart4 .list2 a{display:block; position:absolute; z-index:5;}
 .indexPart4 .list2 .li_01 a{width:176px; height:100px; overflow:hidden; left:0px; top:23px;}
 .indexPart4 .list2 .li_02 a{width:48px; height:123px; overflow:hidden; left:172px; top:56px;}

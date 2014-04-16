@@ -44,9 +44,10 @@ $(function() {
 	//--首页采取行动弹出层
 	$('.indexPart2Btn').click(function() {
 		$('.indexPart2').find('.contentDiv').fadeIn(300);
-		$('body,html').animate({
-			scrollTop : $('.indexPart2').offset().top - 164
-		}, 500);
+		// $('body,html').animate({
+			// scrollTop : $('.indexPart2').offset().top
+		// }, 500);
+		$.scrollTo("#action", 800);
 	})
 	$('.indexPart2').find('.close').click(function() {
 		$('.indexPart2').find('.contentDiv').fadeOut(300);
@@ -83,12 +84,6 @@ $(function() {
 			$('#nav').find('a').removeClass('aNow');
 			$(this).addClass('aNow');
 			$.scrollTo($(this).attr('data-target'), 800);
-			
-			
-			// $('body,html').stop();
-			// $('body,html').animate({
-				// scrollTop : $('.indexDiv').eq(i).offset().top 
-			// }, 500);
 		}, function() {
 		})
 	})
