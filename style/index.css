@@ -146,7 +146,7 @@
 .indexPart1 .imgDiv{text-align:center; padding-top:120px;}
 
 .indexPart4{height:600px; position:relative;}
-.indexPart4 .list{background:url(../image/lbg.png) left top no-repeat; position:absolute; top:373px; left:44px; width:244px; height:200px; overflow:hidden; color:#DCDDDD;}
+.indexPart4 .list{background:url(../image/lbg.png) left top no-repeat; position:absolute; top:373px; left:44px; width:244px; height:200px; overflow:hidden; color:#DCDDDD;z-index: 2}
 .indexPart4 .list li{height:32px; line-height:20px; overflow:hidden; padding-left:47px; position:relative; top:10px;}
 .indexPart4 .list div{width:27px; text-align:center; overflow:hidden; position:absolute; left:16px; top:0px;}
 .indexPart4 .wal{height:600px; width:1260px; position:relative;}
@@ -189,10 +189,11 @@
 
 .indexPart2{height:600px; overflow:hidden; position:relative;}
 .indexPart2Btn{position:fixed; z-index:19; bottom:33px; right:25px;}
-.indexPart2 .contentDiv{width:580px; height:440px; padding:60px 20px 0 20px; overflow:hidden; background:#fff; position:absolute; top:50px; right:0px; z-index:10; display:none;}
-.indexPart2 .close{position:absolute; top:6px; right:5px; display:block; background:url(../image/lico5.gif) left top no-repeat; width:18px; height:18px; overflow:hidden;}
-.indexPart2 .name{text-align:center; color:#333; padding:10px 0 20px 0;}
-.indexPart2 .content1{color:#333; line-height:20px;}
+.dialog {position: fixed; top: 25px; height: 100%; width: 100%;z-index: -1;}
+.takeAction .contentDiv{width:580px; height:440px; padding:60px 20px 0 20px; overflow:hidden; background:#fff; position:absolute; top:50%; margin-top: -250px; right:0px;}
+.takeAction .close{position:absolute; top:6px; right:5px; display:block; background:url(../image/lico5.gif) left top no-repeat; width:18px; height:18px; overflow:hidden;}
+.takeAction .name{text-align:center; color:#333; padding:10px 0 20px 0;}
+.takeAction .content1{color:#333; line-height:20px;}
 
 .indexPart3{height:600px; overflow:hidden; position:relative; border-top:#FFF solid 1px; border-bottom:#FFF solid 1px;}
 

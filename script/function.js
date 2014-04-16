@@ -42,14 +42,14 @@
 		var windowTop = $window.scrollTop();
 		var threshold = settings.threshold;
 
-		if (offset.top - threshold < windowTop) {
-			if (offset.top + $element.height() + threshold >= windowTop) {
+		if(offset.top - threshold < windowTop) {
+			if(offset.top + $element.height() + threshold >= windowTop) {
 				// top edge below the window's top
 			} else {
 				return false;
 			}
 		} else {
-			if (offset.top - threshold <= windowTop + $window.height()) {
+			if(offset.top - threshold <= windowTop + $window.height()) {
 				// bottom edge above the window's bottom
 			} else {
 				return false;
@@ -58,14 +58,14 @@
 
 		var windowLeft = $window.scrollLeft();
 
-		if (offset.left - threshold < windowLeft) {
-			if (offset.left + $element.width() + threshold >= windowLeft) {
+		if(offset.left - threshold < windowLeft) {
+			if(offset.left + $element.width() + threshold >= windowLeft) {
 				// left edge be on the left side of the window's left edge
 			} else {
 				return false;
 			}
 		} else {
-			if (offset.left - threshold <= windowLeft + $window.width()) {
+			if(offset.left - threshold <= windowLeft + $window.width()) {
 				// right edge be on the right side of the window's right edge
 			} else {
 				return false;
@@ -105,13 +105,8 @@
 
 })(jQuery);
 
-window.requestAnimFrame = (function(){
-  return  window.requestAnimationFrame       ||
-          window.webkitRequestAnimationFrame ||
-          window.mozRequestAnimationFrame    ||
-          window.oRequestAnimationFrame      ||
-          window.msRequestAnimationFrame     ||
-          null;
+window.requestAnimFrame = (function() {
+	return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || null;
 })();
 
 (function($) {
@@ -127,19 +122,22 @@ window.requestAnimFrame = (function(){
 			viewHeight = $win.height() > minViewHeight ? $win.height() : minViewHeight;
 			$(".indexDiv").width(viewWidth);
 			$(".indexDiv").height(viewHeight);
+			
+			$("#crisis").height(800);
 
-		 $videoIntroOffsetTop = $videoIntro.offset().top * -1 + 164;
+			$videoIntroOffsetTop = $videoIntro.offset().top * -1 + 164;
 
-		 $crisisOffsetTop = $crisis.offset().top * -1;
+			$crisisOffsetTop = $crisis.offset().top * -1;
 
-		 $actionOffsetTop = $action.offset().top * -1;
+			$actionOffsetTop = $action.offset().top * -1;
 
-		 $shareInfoOffsetTop = $shareInfo.offset().top * -1;
+			$shareInfoOffsetTop = $shareInfo.offset().top * -1;
 
-		 $downloadOffsetTop = $download.offset().top * -1;
+			$downloadOffsetTop = $download.offset().top * -1;
 
-		 $partnerOffsetTop = $partner.offset().top * -1;
+			$partnerOffsetTop = $partner.offset().top * -1;
 		}
+
 
 		$(document).ready(function() {
 			adapteToWindow();
@@ -179,42 +177,42 @@ window.requestAnimFrame = (function(){
 
 		var moveParallax = function() {
 			// videoIntro
-			if ($('#videoIntro:in-viewport').length) {
+			if($('#videoIntro:in-viewport').length) {
 				$videoIntro.css({
 					'background-position' : newPos('50', $videoIntroOffsetTop, 0.3, pos)
 				});
 			}
-			
+
 			// crisis
-			if ($('#crisis:in-viewport').length) {
+			if($('#crisis:in-viewport').length) {
 				$crisis.css({
 					'background-position' : newPos('50', $crisisOffsetTop, 0.3, pos)
 				});
 			}
-			
+
 			// action
-			if ($('#action:in-viewport').length) {
+			if($('#action:in-viewport').length) {
 				$action.css({
 					'background-position' : newPos('50', $actionOffsetTop, 0.3, pos)
 				});
 			}
-			
+
 			// shareInfo
-			if ($('#shareInfo:in-viewport').length) {
+			if($('#shareInfo:in-viewport').length) {
 				$shareInfo.css({
 					'background-position' : newPos('50', $shareInfoOffsetTop, 0.3, pos)
 				});
 			}
-			
+
 			// download
-			if ($('#download:in-viewport').length) {
+			if($('#download:in-viewport').length) {
 				$download.css({
 					'background-position' : newPos('50', $downloadOffsetTop, 0.3, pos)
 				});
 			}
-			
+
 			// partner
-			if ($('#partner:in-viewport').length) {
+			if($('#partner:in-viewport').length) {
 				$partner.css({
 					'background-position' : newPos('50', $partnerOffsetTop, 0.3, pos)
 				});
@@ -228,7 +226,7 @@ window.requestAnimFrame = (function(){
 		};
 
 		var requestTick = function() {
-			if (!ticking) {
+			if(!ticking) {
 				window.requestAnimFrame(rafUpdate);
 			}
 			ticking = true;
@@ -237,11 +235,24 @@ window.requestAnimFrame = (function(){
 		$(window).bind('scroll', function() {
 			pos = $(window).scrollTop();
 			//如果浏览器支持requestAnimationFrame，使用requestAnimationFrame来更新动画
-			if (window.requestAnimFrame !== null) {
+			if(window.requestAnimFrame !== null) {
 				requestTick();
 			} else {
 				moveParallax();
 			}
+		});
+		
+		$("#takeActionContent").jscroll({ W:"4px"
+			,BgUrl:"url(image/Vertical_scrollBg1.gif)"
+			//,Bg:"#eee"
+			,Bar:{  Bd:{Out:"#373737",Hover:"#373737"}
+					,Bg:{Out:"-4px center repeat-y",Hover:"-4px center repeat-y",Focus:"-4px center repeat-y"}
+					}
+			,Btn:{  btn:false
+					,uBg:{Out:"-0px center repeat-y",Hover:"-0px center repeat-y",Focus:"-0px center repeat-y"}
+					,dBg:{Out:"none",Hover:"none",Focus:"none"}
+					}
+			,Fn:function(){}
 		});
 
 	});

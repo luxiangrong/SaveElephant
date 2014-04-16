@@ -43,14 +43,13 @@ $(function() {
 	})
 	//--首页采取行动弹出层
 	$('.indexPart2Btn').click(function() {
-		$('.indexPart2').find('.contentDiv').fadeIn(300);
-		// $('body,html').animate({
-			// scrollTop : $('.indexPart2').offset().top
-		// }, 500);
-		$.scrollTo("#action", 800);
+		
+		$('.dialog').css('z-index', 100);
+		$('.dialog').find('.contentDiv').fadeIn(300);
 	})
-	$('.indexPart2').find('.close').click(function() {
-		$('.indexPart2').find('.contentDiv').fadeOut(300);
+	$('.dialog').find('.close').click(function() {
+		$('.dialog').css('z-index', -1);
+		$('.dialog').find('.contentDiv').fadeOut(300);
 	})
 	//--首页合作伙伴
 	$('.indexPart6').find('.rightBtn').click(function() {
@@ -106,4 +105,8 @@ $(function() {
 		}
 	})
 	//
+	
+	$(".topA").click(function(){
+		$.scrollTo(0, 1500);
+	});
 })
