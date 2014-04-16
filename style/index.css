@@ -146,7 +146,7 @@
 .indexPart1 .imgDiv{text-align:center; padding-top:120px;}
 
 .indexPart4{height:600px; position:relative;}
-.indexPart4 .list{background:url(../image/lbg.png) left top no-repeat; position:absolute; top:373px; left:44px; width:244px; height:200px; overflow:hidden; color:#DCDDDD;z-index: 2}
+.indexPart4 .list{background:url(../image/lbg.png) left top no-repeat; position:absolute; bottom:50px; left:44px; width:244px; height:200px; overflow:hidden; color:#DCDDDD;z-index: 2}
 .indexPart4 .list li{height:32px; line-height:20px; overflow:hidden; padding-left:47px; position:relative; top:10px;}
 .indexPart4 .list div{width:27px; text-align:center; overflow:hidden; position:absolute; left:16px; top:0px;}
 .indexPart4 .wal{height:600px; width:1260px; position:relative;}
@@ -195,7 +195,7 @@
 .takeAction .name{text-align:center; color:#333; padding:10px 0 20px 0;}
 .takeAction .content1{color:#333; line-height:20px;}
 
-.indexPart3{height:600px; overflow:hidden; position:relative; border-top:#FFF solid 1px; border-bottom:#FFF solid 1px;}
+.indexPart3{height:600px; overflow:hidden; position:relative;}
 
 .indexPart5{height:600px; overflow:hidden; position:relative;}
 

@@ -57,8 +57,6 @@ $.fn.extend({
 			var Stime,Sp=0,Isup=0;
 			$(_self).css({overflow:"hidden",position:"relative",padding:"0px"});
 			var dw = $(_self).width(), dh = $(_self).height()-1;
-			console.log(dw);
-			console.log(dh);
 			var sw = j.W ? parseInt(j.W) : 21;
 			var sl = dw - sw
 			var bw = j.Btn.btn==true ? sw : 0;
