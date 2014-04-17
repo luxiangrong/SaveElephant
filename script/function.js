@@ -174,7 +174,7 @@ window.requestAnimFrame = (function(){
 		var pos, ticking = false;
 
 		var newPos = function(x, adjuster, inertia, pos) {
-			return x + "% " + (-((windowHeight + pos) - (windowHeight - adjuster)) * inertia) + "px";
+			return x + "% " + (- pos -  adjuster) * inertia + "px";
 		};
 
 		var moveParallax = function() {
