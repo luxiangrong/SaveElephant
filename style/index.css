@@ -124,7 +124,12 @@
 .crisisPart2 .title{text-align:center; padding:70px 0 50px 0; position:relative; z-index:10;}
 .crisisPart2 .content{width:823px; margin:0 auto; font-size:14px; line-height:1.6em; color:#fff; position:relative; z-index:10;}
 .crisisPart2 .imgDiv{position:absolute; left:18px; top:19px; z-index:1;}
-.crisisPart2 .share{display:block; height:30px; line-height:30px; padding:0 10px 0 28px; overflow:hidden; background:url(../image/shareBg.png) left top no-repeat; position:absolute; right:22px; bottom:21px; z-index:2; color:#999;}
+.crisisPart2 .share{width: 0px;transition: width 0.3s; -moz-transition: width 0.3s; -webkit-transition: width 0.3s; display:block; height:30px; line-height:30px; padding:0 10px 0 58px; overflow:hidden; background:url(../image/shareBg.png) left top no-repeat; position:absolute; right:22px; bottom:21px; z-index:2; color:#999;}
+.crisisPart2 .share:hover{width: 120px;}
+.crisisPart2 .share:hover .jiathis_style{
+	display: block;
+}
+.jiathis_style {display: none; margin-top: 8px; width: 130px;}
 /**/
 .crisisPart3 .title{height:60px; line-height:60px; overflow:hidden; background:url(../image/title.png) center no-repeat;}
 .crisisPart3 .title span{padding:0 0 0 40px; color:#fff;}
@@ -146,7 +151,7 @@
 .indexPart1 .imgDiv{text-align:center; padding-top:120px;}
 
 .indexPart4{height:600px; position:relative;}
-.indexPart4 .list{background:url(../image/lbg.png) left top no-repeat; position:absolute; top:373px; left:44px; width:244px; height:200px; overflow:hidden; color:#DCDDDD;}
+.indexPart4 .list{background:url(../image/lbg.png) left top no-repeat; position:absolute; bottom:50px; left:44px; width:244px; height:200px; overflow:hidden; color:#DCDDDD;z-index: 2}
 .indexPart4 .list li{height:32px; line-height:20px; overflow:hidden; padding-left:47px; position:relative; top:10px;}
 .indexPart4 .list div{width:27px; text-align:center; overflow:hidden; position:absolute; left:16px; top:0px;}
 .indexPart4 .wal{height:600px; width:1260px; position:relative;}
@@ -165,7 +170,7 @@
 .indexPart4 .list1{color:#fff; font-size:14px; font-weight:bold; position:relative;}
 .indexPart4 .list1 li{position:absolute; z-index:1;}
 /**/
-.indexPart4 .list2{background:url(../image/bg1.png) left top no-repeat; width:651px; height:340px; position:absolute; z-index:1; left:327px; top:397px;}
+.indexPart4 .list2{background:url(../image/bg1.png) left top no-repeat; width:651px; height:340px; position:absolute; z-index:1; left:327px; top:297px;}
 .indexPart4 .list2 a{display:block; position:absolute; z-index:5;}
 .indexPart4 .list2 .li_01 a{width:176px; height:100px; overflow:hidden; left:0px; top:23px;}
 .indexPart4 .list2 .li_02 a{width:48px; height:123px; overflow:hidden; left:172px; top:56px;}
@@ -189,12 +194,13 @@
 
 .indexPart2{height:600px; overflow:hidden; position:relative;}
 .indexPart2Btn{position:fixed; z-index:19; bottom:33px; right:25px;}
-.indexPart2 .contentDiv{width:580px; height:440px; padding:60px 20px 0 20px; overflow:hidden; background:#fff; position:absolute; top:50px; right:0px; z-index:10; display:none;}
-.indexPart2 .close{position:absolute; top:6px; right:5px; display:block; background:url(../image/lico5.gif) left top no-repeat; width:18px; height:18px; overflow:hidden;}
-.indexPart2 .name{text-align:center; color:#333; padding:10px 0 20px 0;}
-.indexPart2 .content1{color:#333; line-height:20px;}
+.dialog {position: fixed; top: 25px; height: 100%; width: 100%;z-index: -1;}
+.takeAction .contentDiv{width:580px; height:440px; padding:60px 20px 0 20px; overflow:hidden; background:#fff; position:absolute; top:50%; margin-top: -250px; right:0px;}
+.takeAction .close{position:absolute; top:6px; right:5px; display:block; background:url(../image/lico5.gif) left top no-repeat; width:18px; height:18px; overflow:hidden;}
+.takeAction .name{text-align:center; color:#333; padding:10px 0 20px 0;}
+.takeAction .content1{color:#333; line-height:20px;}
 
-.indexPart3{height:600px; overflow:hidden; position:relative; border-top:#FFF solid 1px; border-bottom:#FFF solid 1px;}
+.indexPart3{height:600px; overflow:hidden; position:relative;}
 
 .indexPart5{height:600px; overflow:hidden; position:relative;}
 
@@ -243,5 +249,3 @@ transition: width 0.5s;
 .search{width:885px; overflow:hidden; margin:0 auto; padding-bottom:85px;}
 .search h2{border-bottom:#bbb dotted 1px; height:45px; line-height:45px; overflow:hidden; margin-bottom:15px;}
 .search li{height:42px; line-height:42px; overflow:hidden; border-bottom:#bbb dotted 1px;}
-
-
