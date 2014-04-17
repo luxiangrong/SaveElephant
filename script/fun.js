@@ -176,6 +176,7 @@
 			animate( settings.onAfter );			
 
 			function animate( callback ){
+				$elem.stop(true);
 				$elem.animate( attr, duration, settings.easing, callback && function(){
 					callback.call(this, target, settings);
 				});

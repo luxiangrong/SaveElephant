@@ -109,4 +109,16 @@ $(function() {
 	$(".topA").click(function(){
 		$.scrollTo(0, 1500);
 	});
+	
+	// $(".share").hover(function(e){
+		// var offsetPos = $(this).offset();
+		// $(".jiathis_style-wrap").show();
+		// $(".jiathis_style-wrap").css('top', offsetPos.top + 30);
+		// $(".jiathis_style-wrap").css('left', offsetPos.left - 62);
+	// }, function(){
+	// });
+// 	
+	// $(".jiathis_style-wrap").on('mouseout', function(){
+		// $(".jiathis_style-wrap").hide();
+	// });
 })
