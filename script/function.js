@@ -174,6 +174,11 @@ window.requestAnimFrame = (function() {
 		var newPos = function(x, adjuster, inertia, pos) {
 			return x + "% " + (- pos -  adjuster) * inertia + "px";
 		};
+		
+		var newTop = function(adjuster, inertia, pos) {
+			return  (- pos -  adjuster) * inertia ;
+			// return (- pos -  adjuster) * inertia + "px";
+		};
 
 		var moveParallax = function() {
 			// videoIntro
@@ -188,12 +193,24 @@ window.requestAnimFrame = (function() {
 				$crisis.css({
 					'background-position' : newPos('50', $crisisOffsetTop, 0.3, pos)
 				});
+				
+				$('#crisis .indexPart').css({
+					'top' : newTop($crisisOffsetTop - 200, 0.8, pos)
+				});
+				
+				$('#crisis .wal').css({
+					'top' : newTop($crisisOffsetTop , 0.4, pos)
+				});
 			}
 
 			// action
 			if($('#action:in-viewport').length) {
 				$action.css({
 					'background-position' : newPos('50', $actionOffsetTop, 0.3, pos)
+				});
+				
+				$('#action .indexPart').css({
+					'top' : newTop($actionOffsetTop - 200, 0.7, pos)
 				});
 			}
 
@@ -202,6 +219,10 @@ window.requestAnimFrame = (function() {
 				$shareInfo.css({
 					'background-position' : newPos('50', $shareInfoOffsetTop, 0.3, pos)
 				});
+				
+				$('#shareInfo .indexPart').css({
+					'top' : newTop($shareInfoOffsetTop - 200, 0.7, pos)
+				});
 			}
 
 			// download
@@ -209,12 +230,20 @@ window.requestAnimFrame = (function() {
 				$download.css({
 					'background-position' : newPos('50', $downloadOffsetTop, 0.3, pos)
 				});
+				
+				$('#download .indexPart').css({
+					'top' : newTop($downloadOffsetTop - 200, 0.7, pos)
+				});
 			}
 
 			// partner
 			if($('#partner:in-viewport').length) {
 				$partner.css({
 					'background-position' : newPos('50', $partnerOffsetTop, 0.3, pos)
+				});
+				
+				$('#partner .indexPart').css({
+					'top' : newTop($partnerOffsetTop - 200, 0.7, pos)
 				});
 			}
 		};

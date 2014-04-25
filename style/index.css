@@ -206,14 +206,14 @@
 
 .indexPart6{height:600px; overflow:hidden; position:relative;}
 .indexPart6 .indexPart{top:120px; left:-63px;}
-.indexPart6 .imgList{width:935px; height:288px; margin:0 auto; overflow:hidden; position:relative; top:100px;}
+.indexPart6 .imgList{width:935px; height:288px; margin:0 auto; overflow:hidden; position:relative; top:300px;}
 .indexPart6 .list{width:823px; margin:0 auto; overflow:hidden;}
 .indexPart6 ul{width:2000%;}
 .indexPart6 li{float:left; width:197px; overflow:hidden; padding-right:12px; text-align:center;}
 .indexPart6 .name{height:40px; line-height:40px; overflow:hidden; background:#ccc; font-size:16px;}
 .indexPart6 .leftBtn{position:absolute; left:0px; top:83px; z-index:10; width:33px; height:66px; background:url(../image/leftBtn.png) left top no-repeat; display:block;}
 .indexPart6 .rightBtn{position:absolute; right:0px; top:83px; z-index:10; width:33px; height:66px; background:url(../image/rightBtn.png) left top no-repeat; display:block;}
-.indexPart6 .btn{display:block; background:url(../image/lbtn4.gif) right top no-repeat; width:39px; height:39px; overflow:hidden; position:absolute; z-index:10; right:56px; bottom:0px; 
+.indexPart6666 .btn{display:block; background:url(../image/lbtn4.gif) right top no-repeat; width:39px; height:39px; overflow:hidden; position:absolute; z-index:10; right:56px; bottom:0px; 
 transition: width 0.5s;
 -moz-transition: width 0.5s;
 -webkit-transition: width 0.5s;

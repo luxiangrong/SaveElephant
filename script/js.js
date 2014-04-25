@@ -11,8 +11,8 @@ $(function() {
 				scrollTop : i * 300
 			}, 300);
 		}, function() {
-		})
-	})
+		});
+	});
 	//--瀑布流
 	//--首页分层(复杂特效)
 	//--首页地图（复杂特效）
@@ -25,8 +25,8 @@ $(function() {
 		}, function() {
 			$(this).removeClass('liNow');
 			$('.mapShow').find('li').hide();
-		})
-	})
+		});
+	});
 	$('.indexPart4').find('.list2').find('a').each(function(i) {
 		$(this).hover(function() {
 			$('.indexPart4').find('.list2').find('a').removeClass('aNow');
@@ -35,29 +35,29 @@ $(function() {
 			$('.indexPart4').find('.list3').find('li').eq(i).show();
 			$('.indexPart4').find('.list3').show();
 		}, function() {
-		})
-	})
+		});
+	});
 	$('.indexPart4').find('.list3').find('.close').click(function() {
 		$('.indexPart4').find('.list2').find('a').removeClass('aNow');
 		$('.indexPart4').find('.list3').hide();
-	})
+	});
 	//--首页采取行动弹出层
 	$('.indexPart2Btn').click(function() {
-		
+
 		$('.dialog').css('z-index', 100);
 		$('.dialog').find('.contentDiv').fadeIn(300);
-	})
+	});
 	$('.dialog').find('.close').click(function() {
 		$('.dialog').css('z-index', -1);
 		$('.dialog').find('.contentDiv').fadeOut(300);
-	})
+	});
 	//--首页合作伙伴
 	$('.indexPart6').find('.rightBtn').click(function() {
 		imgScrollRight2($('.indexPart6').find('.list'), $('.indexPart6').find('li').length / 4 - 1, 4 * 209, 0);
-	})
+	});
 	$('.indexPart6').find('.leftBtn').click(function() {
 		imgScrollLeft2($('.indexPart6').find('.list'), $('.indexPart6').find('li').length / 4 - 1, 4 * 209, 0);
-	})
+	});
 	//--选项卡
 	//--
 	$('.tabContentDiv').find('.tabContent:first').show();
@@ -70,9 +70,9 @@ $(function() {
 				$('.tabContentDiv').eq(i).find('.tabContent').eq(ii).show();
 				Vertical_scrollFun();
 			}, function() {
-			})
-		})
-	})
+			});
+		});
+	});
 	//--js滚动条
 	if ($('.Vertical_scroll').length > 0) {
 		Vertical_scrollFun();
@@ -80,22 +80,48 @@ $(function() {
 	//--首页导航效果
 	$('#nav').find('a').each(function(i) {
 		$(this).hover(function() {
-			$('#nav').find('a').removeClass('aNow');
 			$(this).addClass('aNow');
-			$.scrollTo($(this).attr('data-target'), 800,  {queue:false});
+			
+			var lastTarget = $("#nav").data('target');
+			var currentTarget = $(this).attr('data-target');
+			
+			if(lastTarget != currentTarget) {
+				$("#nav").data('scrolling', true);
+				$.scrollTo($(this).attr('data-target'), 800, {
+					onAfter : function(){
+						$("#nav").data('scrolling', false);
+						desideNav();
+					}
+				});
+			}
 		}, function() {
-		})
-	})
+			desideNav(true);
+		});
+	});
+	
+	$("#nav").hover(function(){
+		$("#nav").data('hover', true);
+	},function(){
+		$("#nav").data('hover', false);
+	});
+	
 	if ($('#nav').length > 0) {
 		$(window).scroll(function() {
-			$('.indexDiv').each(function(i) {
-				if ($(window).scrollTop() >= $(this).offset().top - $(window).height() / 2) {
-					$('#nav').eq(0).find('a').removeClass('aNow');
+			desideNav();
+		});
+	};
+	
+	var desideNav = function(skip){
+		$('.indexDiv').each(function(i) {
+			if ($(window).scrollTop() >= $(this).offset().top - $(window).height() / 2) {
+				$('#nav').eq(0).find('a').removeClass('aNow');
+				if($('#nav').data('hover') != true || skip && $("#nav").data('scrolling') != true) {
 					$('#nav').eq(0).find('a').eq(i).addClass('aNow');
 				}
-			})
-		})
-	}
+			}
+		});
+	};
+	
 	//--
 	$(window).scroll(function() {
 		if ($(window).scrollTop() > 114) {
@@ -103,22 +129,10 @@ $(function() {
 		} else {
 			$('.nav').removeClass('navNow');
 		}
-	})
+	});
 	//
-	
-	$(".topA").click(function(){
+
+	$(".topA").click(function() {
 		$.scrollTo(0, 1500);
 	});
-	
-	// $(".share").hover(function(e){
-		// var offsetPos = $(this).offset();
-		// $(".jiathis_style-wrap").show();
-		// $(".jiathis_style-wrap").css('top', offsetPos.top + 30);
-		// $(".jiathis_style-wrap").css('left', offsetPos.left - 62);
-	// }, function(){
-	// });
-// 	
-	// $(".jiathis_style-wrap").on('mouseout', function(){
-		// $(".jiathis_style-wrap").hide();
-	// });
-})
+});
