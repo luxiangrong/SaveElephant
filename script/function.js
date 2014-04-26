@@ -202,7 +202,7 @@ window.requestAnimFrame = (function() {
 				});
 				
 				$crisisContent.css({
-					'top' : newTop($crisisOffsetTop - 200, 0.8, pos)
+					'top' : newTop($crisisOffsetTop - 100, 0.8, pos)
 				});
 
 				$crisisWal.css({
