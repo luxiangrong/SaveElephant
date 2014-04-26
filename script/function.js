@@ -155,18 +155,25 @@ window.requestAnimFrame = (function() {
 		var $videoIntroOffsetTop = $videoIntro.offset().top * -1;
 
 		var $crisis = $("#crisis");
+		var $crisisContent = $crisis.find('.indexPart');
+		var $crisisWal = $crisis.find('.wal');
+		var $crisisList = $crisis.find('.list');
 		var $crisisOffsetTop = $crisis.offset().top * -1;
 
 		var $action = $("#action");
+		var $actionContent = $action.find('.indexPart');
 		var $actionOffsetTop = $action.offset().top * -1;
 
 		var $shareInfo = $("#shareInfo");
+		var $shareInfoContent = $shareInfo.find('.indexPart');
 		var $shareInfoOffsetTop = $shareInfo.offset().top * -1;
 
 		var $download = $("#download");
+		var $downloadContent = $download.find('.indexPart');
 		var $downloadOffsetTop = $download.offset().top * -1;
 
 		var $partner = $("#partner");
+		var $partnerContent = $partner.find('.indexPart');
 		var $partnerOffsetTop = $partner.offset().top * -1;
 
 		var pos, ticking = false;
@@ -194,12 +201,16 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $crisisOffsetTop, 0.3, pos)
 				});
 				
-				$('#crisis .indexPart').css({
+				$crisisContent.css({
 					'top' : newTop($crisisOffsetTop - 200, 0.8, pos)
 				});
-				
-				$('#crisis .wal').css({
+
+				$crisisWal.css({
 					'top' : newTop($crisisOffsetTop , 0.4, pos)
+				});
+				
+				$crisisList.css({
+					'top' : newTop($crisisOffsetTop - 1400, 0.4, pos)
 				});
 			}
 
@@ -209,7 +220,7 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $actionOffsetTop, 0.3, pos)
 				});
 				
-				$('#action .indexPart').css({
+				$actionContent.css({
 					'top' : newTop($actionOffsetTop - 200, 0.7, pos)
 				});
 			}
@@ -220,7 +231,7 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $shareInfoOffsetTop, 0.3, pos)
 				});
 				
-				$('#shareInfo .indexPart').css({
+				$shareInfoContent.css({
 					'top' : newTop($shareInfoOffsetTop - 200, 0.7, pos)
 				});
 			}
@@ -231,7 +242,7 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $downloadOffsetTop, 0.3, pos)
 				});
 				
-				$('#download .indexPart').css({
+				$downloadContent.css({
 					'top' : newTop($downloadOffsetTop - 200, 0.7, pos)
 				});
 			}
@@ -242,7 +253,7 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $partnerOffsetTop, 0.3, pos)
 				});
 				
-				$('#partner .indexPart').css({
+				$partnerContent.css({
 					'top' : newTop($partnerOffsetTop - 200, 0.7, pos)
 				});
 			}
@@ -283,6 +294,34 @@ window.requestAnimFrame = (function() {
 					}
 			,Fn:function(){}
 		});
-
+		
+		var scrollStep = 100;
+		var bottomWheelNum = 0;
+		var topWheelNum = 0;
+		if($.browser.msie||$.browser.safari) {
+			$(document).mousewheel2(function(event, delta, deltaX, deltaY) {
+				event.preventDefault();
+				var firstScrollTop = $(this).scrollTop();
+				var currentScrollTop = $('body').data('scrollTop')?$('body').data('scrollTop'):firstScrollTop;
+				if (delta > 0) {
+					if(bottomWheelNum > 0) {
+						$('body').data('scrollTop', $(this).scrollTop());
+						bottomWheelNum = 0;
+					}
+					topWheelNum ++;
+					var scrollTo = currentScrollTop - scrollStep * topWheelNum < 0 ? 0 : currentScrollTop - scrollStep * topWheelNum;
+					$.scrollTo(scrollTo, 500, function(){topWheelNum = 0;$('body').data('scrollTop', scrollTo);});
+				} else if (delta < 0) {
+					if(topWheelNum > 0) {
+						$('body').data('scrollTop', $(this).scrollTop());
+						topWheelNum = 0;
+					}
+					bottomWheelNum ++ ;
+					var scrollTo = currentScrollTop + scrollStep * bottomWheelNum < $(document).height() - $(window).height() ? currentScrollTop + scrollStep * bottomWheelNum : $(document).height() - $(window).height();
+					$.scrollTo(currentScrollTop + scrollStep * bottomWheelNum, 500, function(){bottomWheelNum = 0;$('body').data('scrollTop', scrollTo);});
+				}
+			});
+			$(window).scroll(function(){$('body').data('scrollTop', $(this).scrollTop());});
+		}
 	});
 })(jQuery);
