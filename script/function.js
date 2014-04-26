@@ -174,6 +174,7 @@ window.requestAnimFrame = (function() {
 
 		var $partner = $("#partner");
 		var $partnerContent = $partner.find('.indexPart');
+		var $partnerList = $partner.find('.imgList');
 		var $partnerOffsetTop = $partner.offset().top * -1;
 
 		var pos, ticking = false;
@@ -255,6 +256,10 @@ window.requestAnimFrame = (function() {
 				
 				$partnerContent.css({
 					'top' : newTop($partnerOffsetTop - 200, 0.7, pos)
+				});
+				
+				$partnerList.css({
+					'top' : newTop($partnerOffsetTop - 700, 0.5, pos)
 				});
 			}
 		};
