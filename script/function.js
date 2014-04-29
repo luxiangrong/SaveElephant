@@ -152,7 +152,6 @@ window.requestAnimFrame = (function() {
 
 		//需要视差滚动效果的元素
 		var $videoIntro = $("#videoIntro");
-		var $videoContent = $videoIntro.find(".indexPart");
 		var $videoIntroOffsetTop = $videoIntro.offset().top * -1;
 
 		var $crisis = $("#crisis");
