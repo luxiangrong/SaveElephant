@@ -152,21 +152,27 @@ window.requestAnimFrame = (function() {
 
 		//需要视差滚动效果的元素
 		var $videoIntro = $("#videoIntro");
+		var $videoContent = $videoIntro.find(".indexPart");
 		var $videoIntroOffsetTop = $videoIntro.offset().top * -1;
 
 		var $crisis = $("#crisis");
+		var $crisisContent = $crisis.find(".indexPart");
 		var $crisisOffsetTop = $crisis.offset().top * -1;
 
 		var $action = $("#action");
+		var $actionContent = $action.find(".indexPart");
 		var $actionOffsetTop = $action.offset().top * -1;
 
 		var $shareInfo = $("#shareInfo");
+		var $shareInfoContent = $shareInfo.find(".indexPart");
 		var $shareInfoOffsetTop = $shareInfo.offset().top * -1;
 
 		var $download = $("#download");
+		var $downloadContent = $download.find(".indexPart");
 		var $downloadOffsetTop = $download.offset().top * -1;
 
 		var $partner = $("#partner");
+		var $partnerContent = $partner.find(".indexPart");
 		var $partnerOffsetTop = $partner.offset().top * -1;
 
 		var pos, ticking = false;
@@ -194,7 +200,7 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $crisisOffsetTop, 0.3, pos)
 				});
 				
-				$('#crisis .indexPart').css({
+				$crisisContent.css({
 					'top' : newTop($crisisOffsetTop - 200, 0.8, pos)
 				});
 				
@@ -209,7 +215,7 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $actionOffsetTop, 0.3, pos)
 				});
 				
-				$('#action .indexPart').css({
+				$actionContent.css({
 					'top' : newTop($actionOffsetTop - 200, 0.7, pos)
 				});
 			}
@@ -220,7 +226,7 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $shareInfoOffsetTop, 0.3, pos)
 				});
 				
-				$('#shareInfo .indexPart').css({
+				$shareInfoContent.css({
 					'top' : newTop($shareInfoOffsetTop - 200, 0.7, pos)
 				});
 			}
@@ -231,7 +237,7 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $downloadOffsetTop, 0.3, pos)
 				});
 				
-				$('#download .indexPart').css({
+				$downloadContent.css({
 					'top' : newTop($downloadOffsetTop - 200, 0.7, pos)
 				});
 			}
@@ -242,7 +248,7 @@ window.requestAnimFrame = (function() {
 					'background-position' : newPos('50', $partnerOffsetTop, 0.3, pos)
 				});
 				
-				$('#partner .indexPart').css({
+				$partnerContent.css({
 					'top' : newTop($partnerOffsetTop - 200, 0.7, pos)
 				});
 			}
