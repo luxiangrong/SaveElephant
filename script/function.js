@@ -123,7 +123,7 @@ window.requestAnimFrame = (function() {
 			$(".indexDiv").width(viewWidth);
 			$(".indexDiv").height(viewHeight);
 			
-			$("#crisis").height(800);
+			$("#crisis").height(900);
 
 			$videoIntroOffsetTop = $videoIntro.offset().top * -1 + 164;
 
