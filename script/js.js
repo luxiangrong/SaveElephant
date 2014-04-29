@@ -45,6 +45,7 @@ $(function() {
 	$('.indexPart2Btn').click(function() {
 
 		$('.dialog').css('z-index', 100);
+		$('.dialog').css('visibility', 'visible');
 		$('.dialog').find('.contentDiv').fadeIn(300);
 	});
 	$('.dialog').find('.close').click(function() {
