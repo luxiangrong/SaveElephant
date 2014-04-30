@@ -211,7 +211,7 @@ window.requestAnimFrame = (function() {
 				});
 				
 				$crisisList.css({
-					'top' : newTop($crisisOffsetTop - 1400, 0.4, pos)
+					'top' : newTop($crisisOffsetTop - 1650, 0.4, pos)
 				});
 			}
 
