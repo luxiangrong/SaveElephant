@@ -193,7 +193,7 @@
 .indexPart4 .list3 .more{text-align:center;}
 
 .indexPart2{height:600px; overflow:hidden; position:relative;}
-.indexPart2Btn{position:fixed; z-index:19; bottom:33px; right:25px;}
+.indexPart2Btn{position:fixed; z-index:19; bottom:183px; right:25px;}
 .dialog {position: fixed; top: 25px; height: 100%; width: 100%;z-index: -1;}
 .takeAction .contentDiv{width:580px; height:440px; padding:60px 20px 0 20px; overflow:hidden; background:#fff; position:absolute; top:50%; margin-top: -250px; right:0px;}
 .takeAction .close{position:absolute; top:6px; right:5px; display:block; background:url(../image/lico5.gif) left top no-repeat; width:18px; height:18px; overflow:hidden;}

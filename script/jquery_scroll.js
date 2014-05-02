@@ -5,7 +5,7 @@ $.fn.extend({
 			var _self = this;
 		    _self.D = 0;
 			if($.browser.msie||$.browser.safari){
-			   _self.onmousewheel=function(){_self.D = event.wheelDelta;event.returnValue = false;Func && Func.call(_self);};
+			   _self.onmousewheel=function(){_self.D = event.wheelDelta;event.returnValue = false;Func && Func.call(_self); $.Event(event).stopPropagation();};
 			}else{
 			   _self.addEventListener("DOMMouseScroll",function(e){
 					_self.D = e.detail>0?-1:1;

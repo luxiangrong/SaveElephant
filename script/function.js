@@ -123,7 +123,7 @@ window.requestAnimFrame = (function() {
 			$(".indexDiv").width(viewWidth);
 			$(".indexDiv").height(viewHeight);
 			
-			$("#crisis").height(800);
+			$("#crisis").height(900);
 
 			$videoIntroOffsetTop = $videoIntro.offset().top * -1 + 164;
 
@@ -203,7 +203,7 @@ window.requestAnimFrame = (function() {
 				});
 				
 				$crisisContent.css({
-					'top' : newTop($crisisOffsetTop - 100, 0.8, pos)
+					'top' : newTop($crisisOffsetTop - 200, 0.8, pos)
 				});
 
 				$crisisWal.css({
@@ -211,7 +211,7 @@ window.requestAnimFrame = (function() {
 				});
 				
 				$crisisList.css({
-					'top' : newTop($crisisOffsetTop - 1400, 0.4, pos)
+					'top' : newTop($crisisOffsetTop - 1650, 0.4, pos)
 				});
 			}
 
