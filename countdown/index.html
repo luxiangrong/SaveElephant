@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang=zh-CN>
+	<head>
+		<meta charset="utf-8">
+		<title>生命倒计时</title>
+		<link type="text/css" rel="stylesheet" href="index.css"/>
+		
+	</head>
+	
+	<body>
+		<div class="main">
+			<div class="description">
+				<p>2012年，非法盗猎分子为了获取象牙，杀害了大约<i class="pili pili-1">35000头</i>非洲象，</p>
+				<p>这相当于每天<i class="pili pili-2">96</i>头，即每分钟就有一头大象被杀。</p>
+				<p>以这样的盗猎速度，科学家估计，不出<i class="pili pili-3">10</i>年，五分之一的非洲象种群将会<i class="pili pili-4">灭绝</i>。</p>
+				<p>强壮的大象，在自然状态中能够活<i class="pili pili-5">60-70</i>年，</p>
+				<p>现在，每一头非洲象，在非法盗猎威胁下，都正经受着<i class="pili pili-6">900秒</i> 的<i class="pili pili-7">生命倒数</i>。</p>
+				<blockquote>
+					<i>以上数据来源于国际野生生物保护学会（WCS）和IUCN非洲象专家组。</i>
+				</blockquote>
+			</div>
+			<div class="countdown-box">
+				<div class="countdown">
+					<div class="mask left"></div>
+					<div class="rotate left"><div class="bg left"></div></div>
+					<div class="rotate right"><div class="bg right"></div></div>
+					<div class="front num">888</div>
+				</div>
+				<p>今天，已有<strong class="dead-num">11</strong>头非洲象因象牙盗猎而死去</p>
+			</div>
+		</div>
+		
+		<script src="jquery-1.7.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				
+				
+				
+				
+				var showCountdownByPersent = function(persent) {
+					if(persent <= 0.5) {
+						var deg = 360 * persent;
+						$(".countdown .rotate.left").css('transform', 'rotate(0deg)');
+						$(".countdown .rotate.right").css('transform', 'rotate(' + deg + 'deg)');
+						$(".countdown .rotate.left").css('-webkit-transform', 'rotate(0deg)');
+						$(".countdown .rotate.right").css('-webkit-transform', 'rotate(' + deg + 'deg)');
+						$(".countdown .rotate.left").hide();
+						$(".mask").show();
+					} else {
+						var deg = 360 * (persent - 0.5) + 180;
+						$(".countdown .rotate.left").show();
+						$(".countdown .rotate.left").css('transform', 'rotate(' + deg + 'deg)');
+						$(".countdown .rotate.right").css('transform', 'rotate(180deg)');
+						$(".countdown .rotate.left").css('-webkit-transform', 'rotate(' + deg + 'deg)');
+						$(".countdown .rotate.right").css('-webkit-transform', 'rotate(180deg)');
+						$(".mask").hide();
+					}
+				};
+				
+				var calc = function(){
+					var current = new Date();
+					var secondsOffsetToday = current.getHours() * 60 * 60  + current.getMinutes() * 60 + current.getSeconds();
+					var deadNum = Math.floor(secondsOffsetToday / 900);
+					var percent = secondsOffsetToday % 900 / 900;
+					showCountdownByPersent(percent);
+					$('.dead-num').html(deadNum);
+					$('.num').html(900 - secondsOffsetToday % 900);
+				};
+				calc();
+				window.setInterval(calc, 1000);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,161 @@
+@import url(reset.min.css);
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: "微软雅黑", arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+}
+
+.main {
+	width: 980px;
+	height: 260px;
+	color: #FFF;
+	margin: 0 auto;
+	position: relative;
+	background: url(lbg3.png);
+}
+
+.pili {
+	display: inline-block;
+	height: 25px;
+	background: url(./pili.png) no-repeat;
+	text-indent: -1000px;
+}
+
+.pili-1 {
+	width: 125px;
+	background-position: 0 0 ;
+}
+
+.pili-2 {
+	width: 45px;
+	background-position: 0 -25px ;
+}
+
+.pili-3 {
+	width: 40px;
+	background-position: 0 -50px ;
+}
+
+.pili-4 {
+	width: 50px;
+	background-position: 0 -75px ;
+}
+
+.pili-5 {
+	width: 100px;
+	background-position: 0 -100px ;
+}
+
+.pili-6 {
+	width: 86px;
+	background-position: 0 -125px ;
+}
+
+.pili-7 {
+	width: 92px;
+	background-position: 0 -150px ;
+}
+
+.description {
+	padding: 50px;
+}
+
+blockquote {
+	margin-top: 20px;
+}
+
+blockquote i {
+	margin-top: 40px;
+	font-size: 12px;
+}
+
+.countdown-box {
+	position: absolute;
+	right: 50px;
+	top: 0;
+	padding: 10px 0 0 0;
+}
+
+.countdown-box p {
+	margin-top: 5px;
+}
+
+.countdown-box strong {
+	font-size: 24px;
+	display: inline-block;
+	margin: 0 1em;
+}
+
+.countdown {
+	position:relative;
+	background: url(cd_bg.png) center center no-repeat;
+	width: 200px;
+	height: 200px;
+	left: 20px;
+}
+
+.countdown .rotate {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.countdown .rotate.right {
+}
+
+.countdown .bg {
+	position: absolute;
+	width: 100px;
+	height: 200px;
+	background: url(ring.png) no-repeat left top;
+}
+
+.countdown .mask {
+	position: absolute;
+	width: 100px;
+	height: 200px;
+	background: url(mask.png) no-repeat right top;
+	z-index: 10;
+}
+
+.countdown .mask.left {
+	background-position: left top;
+	left: 0;
+	z-index: 1;
+}
+
+.countdown .mask.right {
+	background-position: right top;
+}
+
+.countdown .bg.left {
+}
+.countdown .bg.right {
+}
+
+@font-face {
+    font-family: 'nasa_displayregular';
+    src: url('nasad-webfont-webfont.eot');
+    src: url('nasad-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('nasad-webfont-webfont.woff') format('woff'),
+         url('nasad-webfont-webfont.ttf') format('truetype'),
+         url('nasad-webfont-webfont.svg#nasa_displayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.countdown .num {
+	display: block;
+    font-family: nasa_displayregular;
+    font-size: 88px;
+    height: 100%;
+    line-height: 200px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+
