@@ -33,10 +33,6 @@
 		<script src="jquery-1.7.1.min.js"></script>
 		<script>
 			$(document).ready(function(){
-				
-				
-				
-				
 				var showCountdownByPersent = function(persent) {
 					if(persent <= 0.5) {
 						var deg = 360 * persent;
@@ -44,6 +40,8 @@
 						$(".countdown .rotate.right").css('transform', 'rotate(' + deg + 'deg)');
 						$(".countdown .rotate.left").css('-webkit-transform', 'rotate(0deg)');
 						$(".countdown .rotate.right").css('-webkit-transform', 'rotate(' + deg + 'deg)');
+						$(".countdown .rotate.left").css('-ms-transform', 'rotate(0deg)');
+						$(".countdown .rotate.right").css('-ms-transform', 'rotate(' + deg + 'deg)');
 						$(".countdown .rotate.left").hide();
 						$(".mask").show();
 					} else {
@@ -53,6 +51,10 @@
 						$(".countdown .rotate.right").css('transform', 'rotate(180deg)');
 						$(".countdown .rotate.left").css('-webkit-transform', 'rotate(' + deg + 'deg)');
 						$(".countdown .rotate.right").css('-webkit-transform', 'rotate(180deg)');
+						$(".countdown .rotate.left").css('-ms-transform', 'rotate(' + deg + 'deg)');
+						$(".countdown .rotate.right").css('-ms-transform', 'rotate(180deg)');
+						var rectBottom = 73 + 73 * Math.cos(persent * 2 * Math.PI) + 30;
+						$(".countdown .rotate.left").css('clip', 'rect(0px, 100px, ' + rectBottom + 'px, 0px)');
 						$(".mask").hide();
 					}
 				};
@@ -66,6 +68,15 @@
 					$('.dead-num').html(deadNum);
 					$('.num').html(900 - secondsOffsetToday % 900);
 				};
+				// var t = 0;
+				// var test = function(){
+					// showCountdownByPersent(t);
+					// t = t + 0.01;
+					// if(t >= 1) {
+						// t = 0;
+					// }
+				// }
+				// window.setInterval(test, 100);
 				calc();
 				window.setInterval(calc, 1000);
 			});
