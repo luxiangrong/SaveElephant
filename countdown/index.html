@@ -21,9 +21,7 @@
 			</div>
 			<div class="countdown-box">
 				<div class="countdown">
-					<div class="mask left"></div>
-					<div class="rotate left"><div class="bg left"></div></div>
-					<div class="rotate right"><div class="bg right"></div></div>
+					<div id="countdown-holder"></div>
 					<div class="front num">888</div>
 				</div>
 				<p>今天，已有<strong class="dead-num">11</strong>头非洲象因象牙盗猎而死去</p>
@@ -31,52 +29,68 @@
 		</div>
 		
 		<script src="jquery-1.7.1.min.js"></script>
+		<script src="raphael-min.js"></script>
 		<script>
 			$(document).ready(function(){
-				var showCountdownByPersent = function(persent) {
-					if(persent <= 0.5) {
-						var deg = 360 * persent;
-						$(".countdown .rotate.left").css('transform', 'rotate(0deg)');
-						$(".countdown .rotate.right").css('transform', 'rotate(' + deg + 'deg)');
-						$(".countdown .rotate.left").css('-webkit-transform', 'rotate(0deg)');
-						$(".countdown .rotate.right").css('-webkit-transform', 'rotate(' + deg + 'deg)');
-						$(".countdown .rotate.left").css('-ms-transform', 'rotate(0deg)');
-						$(".countdown .rotate.right").css('-ms-transform', 'rotate(' + deg + 'deg)');
-						$(".countdown .rotate.left").hide();
-						$(".mask").show();
-					} else {
-						var deg = 360 * (persent - 0.5) + 180;
-						$(".countdown .rotate.left").show();
-						$(".countdown .rotate.left").css('transform', 'rotate(' + deg + 'deg)');
-						$(".countdown .rotate.right").css('transform', 'rotate(180deg)');
-						$(".countdown .rotate.left").css('-webkit-transform', 'rotate(' + deg + 'deg)');
-						$(".countdown .rotate.right").css('-webkit-transform', 'rotate(180deg)');
-						$(".countdown .rotate.left").css('-ms-transform', 'rotate(' + deg + 'deg)');
-						$(".countdown .rotate.right").css('-ms-transform', 'rotate(180deg)');
-						var rectBottom = 73 + 73 * Math.cos(persent * 2 * Math.PI) + 30;
-						$(".countdown .rotate.left").css('clip', 'rect(0px, 100px, ' + rectBottom + 'px, 0px)');
-						$(".mask").hide();
-					}
+				
+				var WIDTH = 200;
+				var HEIGHT = 200;
+				var raphael = Raphael("countdown-holder", WIDTH, HEIGHT);
+				var R = 75;
+				var init = true;
+				var param = {
+					stroke : "#FFFFFF",
+					"stroke-width": 4
 				};
+				
+				raphael.customAttributes.arc = function(value, R) {
+					var angle = 2 * Math.PI * value;
+					var x = WIDTH / 2 + Math.sin(angle) * R;
+					var y = HEIGHT / 2 - Math.cos(angle) * R;
+					if(value == 0 || value == 1) {
+						path = [["M", WIDTH / 2, HEIGHT / 2 - R], ["A", R, R, 0, 1, 1, x-0.01, y]];
+					} else {
+						path = [["M", WIDTH / 2, HEIGHT / 2 - R], ["A", R, R, 0, +(value > 0.5), 1, x, y]];
+					}
+					console.log('x:'+x + 'y:' + y + 'value:' + value);
+					
+					return {path: path};
+				}
+				
+				var drawBg = function() {
+					bgSet = raphael.set();
+					var lineWidth = 18;
+					bgSet.push(raphael.path([["M", WIDTH / 2, 0], ["L", WIDTH / 2, lineWidth]]));
+					bgSet.push(raphael.path([["M", WIDTH / 2, HEIGHT], ["L", WIDTH / 2, HEIGHT - lineWidth]]));
+					bgSet.push(raphael.path([["M", 0, HEIGHT / 2], ["L", lineWidth, HEIGHT / 2]]));
+					bgSet.push(raphael.path([["M", WIDTH, HEIGHT / 2], ["L", WIDTH - lineWidth, HEIGHT / 2]]));
+					bgSet.attr({
+						stroke : "#400000",
+						"stroke-width": 2
+					});
+					raphael.circle(WIDTH / 2, HEIGHT / 2, R).attr({
+						stroke : "#400000",
+						"stroke-width": 5
+					});
+				}
+				drawBg();
+				
+				var hand2 = raphael.path().attr(param);
+				var updateVal = function(t) {
+					hand2.attr({
+						arc : [t, R]
+					});
+				}
 				
 				var calc = function(){
 					var current = new Date();
 					var secondsOffsetToday = current.getHours() * 60 * 60  + current.getMinutes() * 60 + current.getSeconds();
 					var deadNum = Math.floor(secondsOffsetToday / 900);
 					var percent = secondsOffsetToday % 900 / 900;
-					showCountdownByPersent(percent);
+					updateVal(percent);
 					$('.dead-num').html(deadNum);
 					$('.num').html(900 - secondsOffsetToday % 900);
 				};
-				// var t = 0;
-				// var test = function(){
-					// showCountdownByPersent(t);
-					// t = t + 0.01;
-					// if(t >= 1) {
-						// t = 0;
-					// }
-				// }
-				// window.setInterval(test, 100);
 				calc();
 				window.setInterval(calc, 1000);
 			});

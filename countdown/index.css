@@ -91,50 +91,12 @@ blockquote i {
 
 .countdown {
 	position:relative;
-	background: url(cd_bg.png) center center no-repeat;
+	background: none;
 	width: 200px;
 	height: 200px;
 	left: 20px;
 }
 
-.countdown .rotate {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-}
-
-.countdown .rotate.right {
-}
-
-.countdown .bg {
-	position: absolute;
-	width: 100px;
-	height: 200px;
-	background: url(ring.png) no-repeat left top;
-}
-
-.countdown .mask {
-	position: absolute;
-	width: 100px;
-	height: 200px;
-	background: url(mask.png) no-repeat right top;
-	z-index: 10;
-}
-
-.countdown .mask.left {
-	background-position: left top;
-	left: 0;
-	z-index: 1;
-}
-
-.countdown .mask.right {
-	background-position: right top;
-}
-
-.countdown .bg.left {
-}
-.countdown .bg.right {
-}
 
 @font-face {
     font-family: 'nasa_displayregular';
@@ -152,8 +114,9 @@ blockquote i {
     font-family: nasa_displayregular;
     font-size: 88px;
     height: 100%;
-    line-height: 200px;
+    line-height: 210px;
     position: absolute;
+    top: 0px;
     text-align: center;
     width: 100%;
 }
