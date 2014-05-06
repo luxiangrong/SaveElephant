@@ -300,10 +300,10 @@ window.requestAnimFrame = (function() {
 			,Fn:function(){}
 		});
 		
-		var scrollStep = 100;
+		var scrollStep = 30;
 		var bottomWheelNum = 0;
 		var topWheelNum = 0;
-		if($.browser.msie||$.browser.safari) {
+		//if($.browser.msie||$.browser.safari) {
 			$(document).mousewheel2(function(event, delta, deltaX, deltaY) {
 				event.preventDefault();
 				var firstScrollTop = $(this).scrollTop();
@@ -327,6 +327,6 @@ window.requestAnimFrame = (function() {
 				}
 			});
 			$(window).scroll(function(){$('body').data('scrollTop', $(this).scrollTop());});
-		}
+		//}
 	});
 })(jQuery);
