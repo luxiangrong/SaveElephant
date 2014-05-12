@@ -111,8 +111,27 @@ window.requestAnimFrame = (function() {
 
 (function($) {
 	$(function() {
+		
+		var isSmartPhone = false;
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			isSmartPhone = true;
+			$(".indexDiv").css('background-attachment', 'scroll');
+			$("#crisis").css('width', 'auto');
+			
+			$("#crisis").css('background-repeat', 'repeat-y');
+			
+			$(".indexPart4 .wal ").css('width', 'auto');
+			$(".indexPart4 .wal ").css('background-size', '100% auto');
+			// $(".indexPart4 .wal ").css('-webkit-transform', 'translate3D(-120px, 0px, 0)');
+			
+			var scale = $(window).width() / 1440;
+			$(".map, .list1, .list2").css('-webkit-transform', 'scale(' + scale + ') translate3D(-250px, 0px, 0px)');
+			$(".list2").css('-webkit-transform', 'scale(' + scale + ') translate3D(-300px, -250px, 0px)');
+		}
+		
 
 		var windowHeight, viewWidth, viewHeight, minViewHeight = 600;
+		
 
 		//根据浏览器窗口，计算view的长宽值
 		function adapteToWindow() {
@@ -140,7 +159,7 @@ window.requestAnimFrame = (function() {
 
 
 		$(document).ready(function() {
-			adapteToWindow();
+			if(!isSmartPhone) adapteToWindow();
 			// $.stellar({
 			// horizontalScrolling : false, //默认水平方向开启滚动
 			// hideDistantElements : false//默认为隐藏
@@ -148,7 +167,7 @@ window.requestAnimFrame = (function() {
 
 		});
 
-		$(window).on("resize", adapteToWindow);
+		if(!isSmartPhone) $(window).on("resize", adapteToWindow);
 
 		//需要视差滚动效果的元素
 		var $videoIntro = $("#videoIntro");
@@ -277,15 +296,17 @@ window.requestAnimFrame = (function() {
 			ticking = true;
 		};
 
-		$(window).bind('scroll', function() {
-			pos = $(window).scrollTop();
-			//如果浏览器支持requestAnimationFrame，使用requestAnimationFrame来更新动画
-			if(window.requestAnimFrame !== null) {
-				requestTick();
-			} else {
-				moveParallax();
-			}
-		});
+		if(!isSmartPhone) {
+			$(window).bind('scroll', function() {
+				pos = $(window).scrollTop();
+				//如果浏览器支持requestAnimationFrame，使用requestAnimationFrame来更新动画
+				if(window.requestAnimFrame !== null) {
+					requestTick();
+				} else {
+					moveParallax();
+				}
+			});
+		}
 		
 		$("#takeActionContent").jscroll({ W:"4px"
 			,BgUrl:"url(image/Vertical_scrollBg1.gif)"
