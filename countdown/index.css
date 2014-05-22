@@ -61,10 +61,11 @@ body {
 
 .description {
 	padding: 50px;
+	line-height: 1.8em;
 }
 
 blockquote {
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 blockquote i {
@@ -77,6 +78,7 @@ blockquote i {
 	right: 50px;
 	top: 0;
 	padding: 10px 0 0 0;
+	width: 230px;
 }
 
 .countdown-box p {
@@ -94,31 +96,33 @@ blockquote i {
 	background: none;
 	width: 200px;
 	height: 200px;
-	left: 20px;
+	margin: 0 auto;
 }
 
 
 @font-face {
-    font-family: 'nasa_displayregular';
-    src: url('nasad-webfont-webfont.eot');
-    src: url('nasad-webfont-webfont.eot?#iefix') format('embedded-opentype'),
-         url('nasad-webfont-webfont.woff') format('woff'),
-         url('nasad-webfont-webfont.ttf') format('truetype'),
-         url('nasad-webfont-webfont.svg#nasa_displayregular') format('svg');
+    font-family: 'digital_dismayregular';
+    src: url('digital_dismay-webfont.eot');
+    src: url('digital_dismay-webfont.eot?#iefix') format('embedded-opentype'),
+         url('digital_dismay-webfont.woff') format('woff'),
+         url('digital_dismay-webfont.ttf') format('truetype'),
+         url('digital_dismay-webfont.svg#digital_dismayregular') format('svg');
     font-weight: normal;
     font-style: normal;
+
 }
 
 .countdown .num {
 	display: block;
-    font-family: nasa_displayregular;
-    font-size: 88px;
+    font-family: digital_dismayregular;
+    font-size: 64px;
     height: 100%;
     line-height: 210px;
     position: absolute;
     top: 0px;
     text-align: center;
     width: 100%;
+    margin-left: 2px;
 }
 
 
