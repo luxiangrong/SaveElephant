@@ -50,7 +50,7 @@ body {
 }
 
 .pili-6 {
-	width: 86px;
+	width: 80px;
 	background-position: 0 -125px ;
 }
 
@@ -60,12 +60,12 @@ body {
 }
 
 .description {
-	padding: 50px;
-	line-height: 1.8em;
+	padding: 40px;
+	line-height: 2em;
 }
 
 blockquote {
-	margin-top: 40px;
+	margin-top: 34px;
 }
 
 blockquote i {
@@ -114,15 +114,14 @@ blockquote i {
 
 .countdown .num {
 	display: block;
-    font-family: digital_dismayregular;
-    font-size: 64px;
+    font-family: Arial;
+    font-size: 56px;
     height: 100%;
     line-height: 210px;
     position: absolute;
     top: 0px;
     text-align: center;
     width: 100%;
-    margin-left: 2px;
 }
 
 

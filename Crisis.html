@@ -7,6 +7,7 @@
 <link href="style/main.css" rel="stylesheet" type="text/css" />
 <link href="style/index.css" rel="stylesheet" type="text/css" />
 <script language="javascript" type="text/javascript" src="script/jquery-1.7.1.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="script/jquery.zclip.min.js"></script>
 <script language="javascript" type="text/javascript" src="script/js.js"></script>
 <script language="javascript" type="text/javascript" src="script/fun.js"></script>
 <!--[if lte IE 6]>
@@ -47,9 +48,13 @@ body{background:url(image/img1280_4.jpg) center top no-repeat fixed; background-
 
 <div class="pageBg">
 <div class="wal">
-	<div style="position:relative; left: 10px; width: 980px; height: 260px; overflow: hidden; ">
+	<div id="countdown-wrap" style="">
 		<iframe width="980" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"  src="countdown/index.html"></iframe>
+		<div class="countdown-tip">
+			<label>倒计时代码分享：<input type="text" id="countdown-share" value='<iframe width="980" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"  src="countdown/index.html"></iframe>'></label><button id="copy-countdown">复制</button>
+		</div>
 	</div>	
+	
 <!--wal-->
 <!--
 <div class="w980 crisisPart1">
@@ -279,5 +284,25 @@ body{background:url(image/img1280_4.jpg) center top no-repeat fixed; background-
 <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1384830402905341" charset="utf-8"></script>
 <!-- JiaThis Button END -->
 </div>
+<script>
+	$(document).ready(function(){
+		$("#countdown-wrap").hover(function(){
+			$(".countdown-tip").css('visibility', 'visible');
+			$(".countdown-tip").show();
+		}, function(){
+			$(".countdown-tip").hide();
+		});
+		
+		$('#copy-countdown').zclip({ 
+	        path: 'script/ZeroClipboard.swf', 
+	        copy: function(){
+	            return $('#countdown-share').val(); 
+	        }, 
+	        afterCopy: function(){
+	            alert("复制成功 ");
+	        } 
+	    }); 
+	});
+</script>
 </body>
 </html>

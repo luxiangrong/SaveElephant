@@ -249,3 +249,37 @@ transition: width 0.5s;
 .search{width:885px; overflow:hidden; margin:0 auto; padding-bottom:85px;}
 .search h2{border-bottom:#bbb dotted 1px; height:45px; line-height:45px; overflow:hidden; margin-bottom:15px;}
 .search li{height:42px; line-height:42px; overflow:hidden; border-bottom:#bbb dotted 1px;}
+
+#countdown-wrap {
+	position:relative; 
+	left: 10px; 
+	width: 980px; 
+	height: 260px; 
+	overflow-y: visible;
+	z-index: 20;
+}
+
+.countdown-tip {
+	background:url(../image/tip_bg.png) left center no-repeat; 
+	width: 580px; 
+	height: 39px;
+	padding-top: 30px;
+	padding-left: 20px;
+	position: absolute;
+	margin-left: 300px;
+	margin-top: -20px;
+	left: 0px;
+	bottom: -70px;
+	z-index: 20;
+	visibility: hidden;
+}
+
+.countdown-tip label {
+	font-size: 14px;
+	color: #333;
+}
+
+.countdown-tip input {
+	width: 400px;
+	margin-right: 5px;
+}
